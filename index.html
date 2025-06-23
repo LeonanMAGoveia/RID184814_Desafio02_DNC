@@ -6,19 +6,86 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Desenvolvendo Blog responsivo - DNC</title>
+    <title>The Dev News - Blog Responsivo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <h1>The Dev News</h1>
+
+    <header class="site-header">
+        <h1 class="site-header__title">The Dev News</h1>
     </header>
-    <section>
-        <div class="howdev">
-            <p>opiniao</p>
+
+    <main class="site-main">
+    <!-- Banner principal -->
+        <section class="banner">
+            <p>Opinião</p>
             <h2>Como é ser um desenvolvedor</h2>
             <p><strong>By</strong> Fabio Tetsuo</p>
-        </div>
+        </section>
+    <!-- Posts populares -->
+        <aside class="sidebar">
+            <h2 class="sidebar__title">Posts Populares</h2>
+            <ul class="sidebar__list">
+                <li class="sidebar__item">
+          <article class="post-card">
+            <img src="./assets/popular1.svg" alt="Desenvolvimento Atual">
+            <div class="post-card__info">
+              <h3 class="post-card__title">Desenvolvimento Atual</h3>
+              <time class="post-card__date">22 Agosto 2022</time>
+            </div>
+          </article>
+        </li>
+        <li class="sidebar__item">
+          <article class="post-card">
+            <img src="./assets/popular2.svg" alt="GitLab vs GitHub">
+            <div class="post-card__info">
+              <h3 class="post-card__title">GitLab vs GitHub</h3>
+              <time class="post-card__date">22 Agosto 2022</time>
+            </div>
+          </article>
+        </li>
+        <li class="sidebar__item">
+          <article class="post-card">
+            <img src="./assets/popular3.svg" alt="Café atrapalha?">
+            <div class="post-card__info">
+              <h3 class="post-card__title">Café atrapalha?</h3>
+              <time class="post-card__date">22 Agosto 2022</time>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Posts mais recentes -->
+    <section class="recent-posts">
+      <h2 class="section-title">Posts mais recentes</h2>
+      <div class="recent-posts__grid">
+        <article class="recentpost-card">
+          <img src="./assets/recent1.svg" alt="Desenvolvimento mobile">
+          <div class="recentpost-card__info">
+            <p class="recentpost-card__category">desenvolvimento</p>
+            <h3 class="recentpost-card__title">Desenvolvimento mobile</h3>
+            <p class="recentpost-card__author"><strong>By</strong> Fabio Tetsuo</p>
+            <p class="recentpost-card__excerpt">
+              Lorem ipsum dolor sit amet consectetur. In vitae urna commodo amet congue integer dapibus.
+            </p>
+            <time class="recentpost-card__date">22 Agosto 2022</time>
+          </div>
+        </article>
+        <!-- Replicar <article> para mais posts -->
+      </div>
     </section>
+
+    <!-- Categorias -->
+    <section class="categories">
+      <h2 class="section-title">Categorias</h2>
+      <ul class="categories__list">
+        <li>saúde (1)</li>
+        <li>desenvolvimento (2)</li>
+        <li>produtividade (1)</li>
+        <li>opinião (3)</li>
+      </ul>
+    </section>
+  </main>
 </body>
 </html>

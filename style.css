@@ -1,55 +1,186 @@
-/*Global*/
-*{
+/* style.css */
+
+/* 1. Reset + Box Sizing */
+*, *::before, *::after {
     box-sizing: border-box;
-    margin: 0rem;
-    padding: 0rem; 
+    margin: 0;
+    padding: 0;
 }
-:root{
-    --font-base:'Montserrat', sans-serif;
-    --color-bg: #FFFFFF;
-    --color-text: #ffffff;
-    --color-light: #FFFFFF;
+
+/* 2. Variables */
+:root {
+    --font-base: 'Montserrat', sans-serif;
+    --color-bg: #ffffff;
+    --color-text: #333333;
+    --color-light: #ffffff;
     --color-primary: #02A28F;
+    --spacing: 1rem;
+    --radius: 0.5rem;
+    --shadow: 0 4px 4px rgba(0,0,0,0.1);
 }
-html{
-    font-size: 16px;
+
+html {
     font-family: var(--font-base);
+    font-size: 16px;
     background-color: var(--color-bg);
+    color: var(--color-text);
 }
-h1,h2,p{color: var(--color-text);}
-h1{font-size: 2.5rem;}
-h2{font-size: 2rem;}
-p{font-size: 1rem;}
+body {
+    line-height: 1.5;
+}
 
-/*Header*/
-.header{
+/* 3. Header */
+.site-header {
     background-color: var(--color-primary);
-    font-weight: 700;
-    padding: .7rem 5rem;
+    padding: var(--spacing) 2rem;
+    justify-content: flex-start;
+}
+.site-header__title {
+    font-size: 2rem;
+    color: var(--color-light);
 }
 
-/*Howdev*/
-.howdev{
+/* 4. Layout Grid */
+.site-main {
+    display: grid;
+    grid-template-areas:
+    "banner sidebar"
+    "recent categories";
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing) 1rem;
+    padding: 2.5rem 5rem 2.5rem 5rem;
+}
+
+.banner { grid-area: banner; }
+.sidebar { grid-area: sidebar; }
+.recent-posts { grid-area: recent; }
+.categories { grid-area: categories; }
+
+/* 5. Banner */
+.banner {
+    color: var(--color-light);
     position: relative;
-    margin: 3rem 0 0 7rem;
-    width: 744px;
-    height: 396px;
-    border-radius: .5rem;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16/6;
+    border-radius: var(--radius);
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: .8rem;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8)),url(./assets/dev.jpg) center/cover no-repeat;
+    padding: var(--spacing);
+    background:
+        linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8)),
+        url('./assets/dev.jpg') center/cover no-repeat;
 }
+
+/* 6. Sidebar Posts Populares */
+.sidebar__title {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    margin-bottom: var(--spacing);
+}
+.sidebar__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+}
+.post-card {
+  display: flex;
+  gap: var(--spacing);
+  background: var(--color-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.post-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+.post-card__info {
+  padding: var(--spacing);
+}
+.post-card__title {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+.post-card__date {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+/* 7. Posts Recentes */
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing);
+}
+.recent-posts__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing);
+}
+.recentpost-card {
+  background: var(--color-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.recentpost-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.recentpost-card__info {
+  padding: var(--spacing);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.recentpost-card__category {
+  font-size: 0.75rem;
+  color: var(--color-primary);
+}
+.recentpost-card__title {
+  font-size: 1.25rem;
+}
+.recentpost-card__excerpt {
+  font-size: 0.875rem;
+  color: #555;
+  flex-grow: 1;
+}
+.recentpost-card__date {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+/* 8. Categorias */
+.categories {
+  background: var(--color-light);
+  border-radius: var(--radius);
+  padding: var(--spacing);
+  box-shadow: var(--shadow);
+}
+.categories__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* 9. Responsividade */
 @media (max-width: 1024px) {
-    .howdev{
-        width: 90%;
-        margin: 2rem auto;
-        height: auto;
-    }
-}
-@media (max-width: 600px) {
-    .header{
-        padding: .7rem 2rem;
-    }
+  .site-main {
+    grid-template-areas:
+      "banner"
+      "sidebar"
+      "recent"
+      "categories";
+    grid-template-columns: 1fr;
+  }
 }

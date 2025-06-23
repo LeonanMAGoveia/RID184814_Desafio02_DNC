@@ -1,0 +1,55 @@
+/*Global*/
+*{
+    box-sizing: border-box;
+    margin: 0rem;
+    padding: 0rem; 
+}
+:root{
+    --font-base:'Montserrat', sans-serif;
+    --color-bg: #FFFFFF;
+    --color-text: #ffffff;
+    --color-light: #FFFFFF;
+    --color-primary: #02A28F;
+}
+html{
+    font-size: 16px;
+    font-family: var(--font-base);
+    background-color: var(--color-bg);
+}
+h1,h2,p{color: var(--color-text);}
+h1{font-size: 2.5rem;}
+h2{font-size: 2rem;}
+p{font-size: 1rem;}
+
+/*Header*/
+.header{
+    background-color: var(--color-primary);
+    font-weight: 700;
+    padding: .7rem 5rem;
+}
+
+/*Howdev*/
+.howdev{
+    position: relative;
+    margin: 3rem 0 0 7rem;
+    width: 744px;
+    height: 396px;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: .8rem;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8)),url(./assets/dev.jpg) center/cover no-repeat;
+}
+@media (max-width: 1024px) {
+    .howdev{
+        width: 90%;
+        margin: 2rem auto;
+        height: auto;
+    }
+}
+@media (max-width: 600px) {
+    .header{
+        padding: .7rem 2rem;
+    }
+}

@@ -2,21 +2,21 @@
 
 /* 1. Reset + Box Sizing */
 *, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* 2. Variables */
 :root {
-    --font-base: 'Montserrat', sans-serif;
-    --color-bg: #ffffff;
-    --color-text: #333333;
-    --color-light: #ffffff;
-    --color-primary: #02A28F;
-    --spacing: 1rem;
-    --radius: 0.5rem;
-    --shadow: 0 4px 4px rgba(0,0,0,0.1);
+  --font-base: 'Montserrat', sans-serif;
+  --color-bg: #ffffff;
+  --color-text: #333333;
+  --color-light: #ffffff;
+  --color-primary: #02A28F;
+  --spacing: 1rem;
+  --radius: 0.5rem;
+  --shadow: 0 4px 4px rgba(0,0,0,0.1);
 }
 
 html {
@@ -46,9 +46,9 @@ body {
     grid-template-areas:
     "banner sidebar"
     "recent categories";
-    grid-template-columns: 2fr 1fr;
-    gap: var(--spacing) 1rem;
-    padding: 2.5rem 5rem 2.5rem 5rem;
+    grid-template-columns: 744px 361px;
+    gap:  2rem;
+    padding: 2rem 5rem;
 }
 
 .banner { grid-area: banner; }
@@ -62,7 +62,6 @@ body {
     position: relative;
     width: 100%;
     max-width: 800px;
-    aspect-ratio: 16/6;
     border-radius: var(--radius);
     overflow: hidden;
     display: flex;
@@ -90,19 +89,20 @@ body {
 }
 .post-card {
   display: flex;
-  gap: var(--spacing);
   background: var(--color-light);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   overflow: hidden;
 }
 .post-card img {
-  width: 80px;
+  width: 130px;
   height: 80px;
   object-fit: cover;
+  padding: .5rem;
+  border-radius: var(--radius);
 }
 .post-card__info {
-  padding: var(--spacing);
+  padding: .5rem;
 }
 .post-card__title {
   font-size: 1rem;
@@ -117,6 +117,10 @@ body {
 .section-title {
   font-size: 1.5rem;
   margin-bottom: var(--spacing);
+  background-color: var(--color-primary);
+  border-radius: var(--radius);
+  color: var(--color-light);
+  padding: .5rem;
 }
 .recent-posts__grid {
   display: grid;
@@ -130,6 +134,7 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  gap: .5rem;
 }
 .recentpost-card img {
   width: 100%;
@@ -161,18 +166,22 @@ body {
 
 /* 8. Categorias */
 .categories {
-  background: var(--color-light);
   border-radius: var(--radius);
-  padding: var(--spacing);
-  box-shadow: var(--shadow);
 }
 .categories__list {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  padding: .5rem;
 }
 
+footer{
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  text-align: center;
+  padding: .5rem;
+}
 /* 9. Responsividade */
 @media (max-width: 1024px) {
   .site-main {

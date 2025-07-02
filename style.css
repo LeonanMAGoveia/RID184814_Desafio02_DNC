@@ -183,13 +183,379 @@ footer{
   padding: .5rem;
 }
 /* 9. Responsividade */
-@media (max-width: 1024px) {
-  .site-main {
+@media (max-width: 600px) {
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0rem;
+  padding: 0rem;
+  max-width: 100vw;
+}
+
+html, body {
+  background: #fff;
+  font-size: 16px;
+}
+
+.site-header {
+  text-align: center;
+}
+
+.site-header__title {
+  font-size: 2rem;
+  padding: 0;
+}
+
+.site-main {
     grid-template-areas:
       "banner"
-      "sidebar"
       "recent"
-      "categories";
+      "sidebar"
+      "categories"
+      ;
     grid-template-columns: 1fr;
+    padding: 1rem;
+    margin: 0rem;
+    justify-content: center;
   }
+
+.banner {
+  width: 90vw;
+  max-width: 100vw;
+  border-radius: 1rempx;
+  aspect-ratio: 1.2/1;
+  box-sizing: border-box;
+}
+
+.section-title, .sidebar__title {
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 90vw;
+  max-width: 100vw;
+  text-align: left;
+}
+
+.recent-posts, .sidebar, .categories {
+  width: 90vw;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+.recent-posts__grid {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.recentpost-card {
+  border-radius: 1rem;
+  margin: .5rem;
+  gap: 0;
+  box-shadow: 1rem rgba(0,0,0,0.07);
+}
+
+.recentpost-card img {
+  border-radius: 14px 14px 0 0;
+  max-height: 180px;
+  object-fit: cover;
+}
+
+.recentpost-card__info {
+  gap: 0.3rem;
+}
+
+.sidebar__list {
+  gap: 0.7rem;
+}
+
+.post-card {
+  border-radius: 14px;
+  margin-bottom: 1rem;
+  padding: 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+
+.post-card img {
+  width: 130px;
+  height: 90px;
+  padding: 0.7rem;
+  border-radius: 1rem;
+}
+.post-card__info {
+  padding: 0.5rem;
+}
+
+.categories {
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  padding: 0;
+}
+
+.categories__list {
+  padding: 0.7rem 0.7rem;
+  gap: 0.3rem;
+}
+
+.categories__list li {
+  font-size: 1rem;
+  padding: 0.2rem 0;
+}
+
+footer, .site-footer {
+  font-size: 0.85rem;
+  padding: 0.7rem 0;
+  margin-top: 1.2rem;
+  width: 100vw;
+}
+
+.site-main > * {
+  width: 90vw;
+  max-width: 100vw;
+  margin: 0 auto 1.2rem auto;
+  box-sizing: border-box;
+}
+}
+
+/*@media (max-width: 600px) {
+
+html, body {
+
+background: #fff;
+
+min-width: 100vw;
+
+overflow-x: hidden;
+
+}
+
+.site-header {
+
+padding: 1.2rem 0 0.7rem 0;
+
+text-align: center;
+
+}
+
+.site-header__title {
+
+font-size: 2rem;
+
+padding-left: 0;
+
+}
+
+.site-main {
+
+display: block;
+
+padding: 0;
+
+max-width: 100vw;
+
+margin: 0;
+
+}
+
+.banner {
+
+width: 90vw;
+
+max-width: 100vw;
+
+margin: 1.2rem auto 1.2rem auto;
+
+border-radius: 12px;
+
+aspect-ratio: 1.2/1;
+
+padding: 1.1rem 1.1rem 1.7rem 1.1rem;
+
+box-sizing: border-box;
+
+}
+
+.section-title, .sidebar__title {
+
+font-size: 1.25rem;
+
+padding: 0.7rem 0;
+
+border-radius: 10px;
+
+margin: 0 auto 0.7rem auto;
+
+width: 90vw;
+
+max-width: 100vw;
+
+text-align: left;
+
+}
+
+.recent-posts, .sidebar, .categories {
+
+width: 90vw;
+
+max-width: 100vw;
+
+margin: 0 auto 1.2rem auto;
+
+box-sizing: border-box;
+
+}
+
+.recent-posts__grid {
+
+grid-template-columns: 1fr;
+
+gap: 1.1rem;
+
+}
+
+.recentpost-card {
+
+border-radius: 14px;
+
+margin-bottom: 0.7rem;
+
+gap: 0;
+
+box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+
+}
+
+.recentpost-card img {
+
+border-radius: 14px 14px 0 0;
+
+max-height: 180px;
+
+object-fit: cover;
+
+}
+
+.recentpost-card__info {
+
+padding: 1rem 1.1rem 1.1rem 1.1rem;
+
+gap: 0.3rem;
+
+}
+
+.sidebar__list {
+
+gap: 0.7rem;
+
+}
+
+.post-card {
+
+border-radius: 14px;
+
+margin-bottom: 1rem;
+
+padding: 0;
+
+box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+
+}
+
+.post-card img {
+
+width: 70px;
+
+height: 55px;
+
+padding: 0.3rem;
+
+border-radius: 10px;
+
+}
+
+.post-card__info {
+
+padding: 0.5rem 0.5rem 0.5rem 0.2rem;
+
+}
+
+.categories {
+
+margin-top: 1.2rem;
+
+border-radius: 14px;
+
+background: #fff;
+
+box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+
+padding: 0;
+
+}
+
+.categories__list {
+
+padding: 0.7rem 0.7rem;
+
+gap: 0.3rem;
+
+}
+
+.categories__list li {
+
+font-size: 1rem;
+
+padding: 0.2rem 0;
+
+}
+
+footer, .site-footer {
+
+font-size: 0.85rem;
+
+padding: 0.7rem 0;
+
+margin-top: 1.2rem;
+
+width: 100vw;
+
+}
+
+
+.recent-posts {
+
+order: 1;
+
+}
+
+.sidebar {
+
+order: 2;
+
+}
+
+.categories {
+
+order: 3;
+
+}
+
+.banner {
+
+order: 0;
+
+}
+
+.site-main > * {
+
+width: 90vw;
+
+max-width: 100vw;
+
+margin: 0 auto 1.2rem auto;
+
+box-sizing: border-box;
+
+}
+
 }
